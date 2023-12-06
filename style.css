@@ -16,8 +16,26 @@
     font-family: 'Roboto Condensed';
 }
 
-body {
-    background-image: url("gif1.gif");
+.digital-clock {
+    font-size: 24px;
+    font-family: 'Poppins';
+    font-weight: 700;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 5rem;
+    text-decoration: underline;
+  }
+  
+
+.back-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    backdrop-filter: whi;
 }
 
 .ANDRE {
