@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html>
+
+<body onload="initcart()">
+
+
+  <div class="home">
+    <a href="https://drdrez.github.io/CS-1130/"><h1>HOME</h1></a> 
+    </div>
+
+<div class="row">
+  <div class="col">
+<h1>Simple Shopping Cart</h1>
+
+
+
+<p class="inputs">
+
+<label for="itemdesc">Choose an item:</label>    
+
+<select name="itemdesc" id="itemdesc">
+
+  <option value="sardines">sardines</option>
+
+  <option value="hotdog">hotdog</option>
+
+  <option value="shampoo">shampoo</option>
+
+  <option value="toothpaste">toothpaste</option>
+
+  <option value="noodles">noodles</option>
+
+</select>
+
+<label for="qty">Quantity:</label>
+<input id="qty" name="qty" type="number" onkeyup="computeamount()"></input>
+<label for="price">Unit Price:</label>
+<input id="price" name="price" type="number" onkeyup="computeamount()"></input>
+<label for="amount">Amount:</label>
+<input id="amount" name="amount" type="number" readonly></input>
+<button onclick="addtocart()">Add to Cart</button>
+
+</p>
+<br>
+<p class="inputs">
+<label for="items">Cart Items:</label>
+<input id="items" name="items" type="number" readonly></input>
+<button onclick="initcart()">Clear Cart</button><button onclick="showcart()">Show Cart</button>
+
+</p>
+
+<p id="cartheader"></p>
+<p id="cart"></p>
+<br>
+<p id="cartfooter"></p>
+
+  </div>
+</div>
+
+<script>
+
+
+
+
+
+    // Initialize cart      
+
+    function initcart(){
+
+        cart=[];
+
+        document.getElementById("items").value=cart.length;
+
+        document.getElementById("cartheader").innerHTML="";
+
+        document.getElementById("cart").innerHTML="";
+
+        document.getElementById("cartfooter").innerHTML="";
+
+            
+
+    }
+
+
+
+    // Add item to cart
+
+    function addtocart(){
+
+         
+
+         var ci = {
+
+             "item": "1",
+
+             "price": 0,
+
+             "qty": 1,
+
+            "itemamount" : function itemamount(){
+
+                 return Math.round(this.price*this.qty*100)/100;  
+
+               }
+
+            };
+
+
+
+          ci.item=document.getElementById("itemdesc").value;
+
+          ci.qty=document.getElementById("qty").value;
+
+          ci.price=document.getElementById("price").value;
+
+
+
+          console.log(ci.item);
+
+          console.log(ci.qty);
+
+          console.log(ci.price);
+
+
+
+
+
+           cart.push(ci);
+
+          //cart[cart.length]=cartitem;
+
+
+
+          console.log(cart.length);
+
+          document.getElementById("items").value=cart.length;
+
+
+
+    }
+
+
+
+    // Compute Amount per Item
+
+    function computeamount() {
+
+          var q,p,q;
+
+          q = document.getElementById("qty").value*1;
+
+          p = document.getElementById("price").value*1;
+
+
+
+          a = Math.round(q*p*100)/100;  // rounds off to 2 decimal places
+
+
+
+          console.log(a);
+
+
+
+          document.getElementById("amount").value=a;
+
+        
+
+    }    
+
+    
+
+    // Show the contents of the cart
+
+    function showcart(){
+
+
+
+        var i,l,carttext,totalamount;
+
+
+
+        l = cart.length;
+
+        
+
+        for (i=0,totalamount=0,carttext="";i<l;i++){
+
+            
+
+            carttext+="<p> "
+
+               +cart[i].item+"  "
+
+               +cart[i].qty+"   "
+
+               +cart[i].price+"   "
+
+               +cart[i].itemamount()+" "
+
+               +" </p>";
+
+
+
+            totalamount+=cart[i].itemamount();
+
+          
+
+
+
+        }
+
+        
+
+        console.log(carttext);
+
+        document.getElementById("cartheader").innerHTML=
+
+          "Item".padEnd(30,' ')
+
+          +"Qty".padStart(10,' ')
+
+          +"Price".padStart(15,' ')
+
+          +"Amount".padStart(15,' ');
+
+
+
+        document.getElementById("cart").innerHTML=carttext;
+
+
+
+        document.getElementById("cartfooter").innerHTML=
+
+           "Items bought:"+ cart.length+ "Total Amount:"+ totalamount;
+
+
+
+    }
+
+  
+
+// Global variable
+
+var cart = []; 
+
+
+
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300&family=Roboto:wght@400;500;700;900&display=swap');
+@font-face {
+    font-family: "Druk Web Bold Regular";
+    src: url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.eot");
+    src: url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.svg#Druk Web Bold Regular")format("svg");
+}
+
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins";
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home a {
+  text-decoration: none;
+  color: #111827;
+}
+
+.home a:hover {
+  background-color: #111827;
+  color: white;
+  transition-duration: .2s;
+}
+
+.home h1 {
+  padding-inline: 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  align-items: center;
+  border: solid #111827;
+  padding: 10px;
+}
+
+.inputs {
+  flex-direction: column;
+  display: flex;
+}
+
+
+</style>
+
+</body>
+
+</html>

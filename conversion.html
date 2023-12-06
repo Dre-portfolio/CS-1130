@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONVERSION</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="home">
+        <a href="https://drdrez.github.io/CS-1130/"><h1>HOME</h1></a> 
+        </div>
+<section class="conversion-section-main">
+    <h2>Unit Conversion</h2>
+    <br>
+    <button onclick="celsiusToFahrenheit()">Convert Celsius to Fahrenheit</button>
+    <br>
+    <button onclick="fahrenheitToCelsius()">Convert Fahrenheit to Celsius</button>
+    <br>
+    <button onclick="metersToFeet()">Convert Meters to Feet</button>
+    <br>
+    <button onclick="feetToMeters()">Convert Feet to Meters</button>
+
+    <!-- Result container -->
+    <div id="conversion-result"></div>
+</section>
+
+<style>
+     /* HOME BUTTON */
+.home {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .home a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .home a h1 {
+    font-family: "Poppins";
+  }
+
+  .home a:hover {
+    background-color: #ffffff;
+    color: black;
+    transition-duration: .2s;
+  }
+  
+  .home h1 {
+    padding-inline: 15px;
+  }
+  
+    /* CONVERSION */
+.conversion-section-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 20rem;
+}
+
+.conversion-section-main h2 {
+   font-size: 2.5rem;
+}
+
+.conversion-section-main button {
+    font-family: "Poppins";
+}
+
+</style>
+<script>
+
+    function displayResult(result) {
+        document.getElementById('conversion-result').innerText = result;
+    }
+
+    function celsiusToFahrenheit() {
+        var cel = prompt("Enter temperature in Celsius:");
+        var result = (cel * 9/5) + 32;
+        displayResult("Temperature in Fahrenheit: " + result);
+    }
+
+    function fahrenheitToCelsius() {
+        var fahr = prompt("Enter temperature in Fahrenheit:");
+        var result = (fahr - 32) * 5/9;
+        displayResult("Temperature in Celsius: " + result);
+    }
+
+    function metersToFeet() {
+        var meters = prompt("Enter length in meters:");
+        var result = meters * 3.28084;
+        displayResult("Length in Feet: " + result);
+    }
+
+    function feetToMeters() {
+        var feet = prompt("Enter length in feet:");
+        var result = feet / 3.28084;
+        displayResult("Length in Meters: " + result);
+    }
+
+</script>
+
+</body>
+</html>

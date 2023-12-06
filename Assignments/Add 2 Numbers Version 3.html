@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+  <div class="home">
+    <a href="https://drdrez.github.io/CS-1130/"><h1>HOME</h1></a> 
+    </div>
+
+<div class="row">
+  <div class="col">
+
+  <h1>Add two numbers</h1>
+
+  <p class="inputs">
+    <label for="n1">First Number</label>
+    <input id="n1" name="n1" type="number" oninput="computesum()">
+    <label for="n2">Second Number</label>
+    <input id="n2" name="n2" type="number" oninput="computesum()">
+  </p>
+  <br>
+    <label for="sum" id="sumlabel">The sum is:</label>
+    <input id="sum" name="sum" type="number" readonly></input>
+  </p>
+
+    </div>
+  </div>
+
+  <script>
+    function computesum() {
+      var x, y;
+
+      // Retrieve the user input
+      x = document.getElementById("n1").value * 1; // *1 Converts the result to number
+      y = document.getElementById("n2").value * 1; // to avoid having to use parseFloat
+
+      // Compute the sum
+      let z = x + y;
+
+      // Display the result
+      document.getElementById("sumlabel").innerHTML = 'The sum of ' + x + ' and ' + y + ' is:';
+      document.getElementById("sum").value = z;
+    }
+  </script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300&family=Roboto:wght@400;500;700;900&display=swap');
+@font-face {
+    font-family: "Druk Web Bold Regular";
+    src: url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.eot");
+    src: url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.svg#Druk Web Bold Regular")format("svg");
+}
+
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins";
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home a {
+  text-decoration: none;
+  color: #111827;
+}
+
+.home a:hover {
+  background-color: #111827;
+  color: white;
+  transition-duration: .2s;
+}
+
+.home h1 {
+  padding-inline: 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  align-items: center;
+  border: solid #111827;
+  padding: 50px;
+}
+
+.inputs {
+  flex-direction: column;
+  display: flex;
+}
+
+
+</style>
+
+</body>
+
+</html>

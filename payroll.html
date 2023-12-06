@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Payroll</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+
+  <div class="home">
+    <a href="https://drdrez.github.io/CS-1130/"><h1>HOME</h1></a> 
+    </div>
+
+<div class="payroll-main">
+  <h2>Simple Payroll</h2>
+  <br>
+  <div class="inputs">
+  <label for="employeeName">Employee Name:</label>
+  <input type="text" id="employeeName">
+  <label for="daysWorked">Days Worked:</label>
+  <input type="number" id="daysWorked">
+  <label for="dailyRate">Daily Rate:</label>
+  <input type="number" id="dailyRate">
+  <label for="deductionAmount">Deduction Amount:</label>
+  <input type="number" id="deductionAmount">
+  <button onclick="addEmployee()">Add Employee</button>
+  <br>
+  <table id="payrollTable" border="1">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Employee Name</th>
+        <th>Days Worked</th>
+        <th>Daily Rate</th>
+        <th>Gross Pay</th>
+        <th>Deduction Amount</th>
+        <th>Net Pay</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="payrollBody">
+      <!-- Payroll table body will be generated here -->
+    </tbody>
+  </table>
+
+  <label for="deleteIndex">Enter Line Number to Delete:</label>
+  <input type="number" id="deleteIndex">
+  <button onclick="deleteEmployee()">Delete Employee</button>
+  </div>
+</div>
+
+  <style>
+     /* HOME BUTTON */
+.home {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .home a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .home a h1 {
+    font-family: "Poppins";
+  }
+
+  .home a:hover {
+    background-color: #ffffff;
+    color: black;
+    transition-duration: .2s;
+  }
+  
+  .home h1 {
+    padding-inline: 15px;
+  }
+
+    .payroll-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin-top: 10rem;
+    }
+    
+    .payroll-main h2 {
+      font-size: 2rem;
+    }
+
+    .inputs {
+      display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 1.2rem;
+    }
+    </style>
+
+  <script>
+    let payrollList = [];
+
+function addEmployee() {
+  const employeeName = document.getElementById('employeeName').value;
+  const daysWorked = parseInt(document.getElementById('daysWorked').value);
+  const dailyRate = parseFloat(document.getElementById('dailyRate').value);
+  const deductionAmount = parseFloat(document.getElementById('deductionAmount').value);
+
+  const grossPay = daysWorked * dailyRate;
+  const netPay = grossPay - deductionAmount;
+
+  const employee = {
+    employeeName,
+    daysWorked,
+    dailyRate,
+    grossPay,
+    deductionAmount,
+    netPay
+  };
+
+  payrollList.push(employee);
+  displayPayroll();
+}
+
+function deleteEmployee() {
+  const deleteIndex = parseInt(document.getElementById('deleteIndex').value);
+  if (deleteIndex >= 1 && deleteIndex <= payrollList.length) {
+    payrollList.splice(deleteIndex - 1, 1);
+    displayPayroll();
+  } else {
+    alert('Invalid line number. Please enter a valid line number to delete.');
+  }
+}
+
+function displayPayroll() {
+  const payrollBody = document.getElementById('payrollBody');
+  payrollBody.innerHTML = '';
+
+  payrollList.forEach((employee, index) => {
+    const row = `
+      <tr>
+        <td>${index + 1}</td>
+        <td>${employee.employeeName}</td>
+        <td>${employee.daysWorked}</td>
+        <td>${employee.dailyRate}</td>
+        <td>${employee.grossPay}</td>
+        <td>${employee.deductionAmount}</td>
+        <td>${employee.netPay}</td>
+        <td><button onclick="deleteEmployee()">Delete</button></td>
+      </tr>
+    `;
+    payrollBody.innerHTML += row;
+  });
+}
+
+
+  </script>
+</body>
+</html>
+
+
+

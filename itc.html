@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Income Tax Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<div class="home">
+    <a href="https://drdrez.github.io/CS-1130/"><h1>HOME</h1></a> 
+    </div>
+
+<body>
+    <div class="itc-section-main">
+  <h1>Income Tax Calculator</h1>
+  <br>
+  <label for="income">Enter Taxable Income:</label>
+  <input type="number" id="income" min="0" step="1000" onchange="calculateTax()">
+  <br>
+  <p id="taxResult">Income Tax: </p>
+
+</div>
+
+    <style>
+        /* HOME BUTTON */
+.home {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .home a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  
+  .home a h1 {
+    font-family: "Poppins";
+  }
+
+  .home a:hover {
+    background-color: #ffffff;
+    color: black;
+    transition-duration: .2s;
+  }
+  
+  .home h1 {
+    padding-inline: 15px;
+  }
+
+
+  /* ITC SECTION */
+.itc-section-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 20rem;
+}
+
+
+
+    </style>
+  <script>
+    function calculateTax() {
+      const income = parseFloat(document.getElementById('income').value);
+      let tax = 0;
+
+      if (income <= 250000) {
+        tax = 0;
+      } else if (income > 250000 && income <= 400000) {
+        tax = 0.2 * (income - 250000);
+      } else if (income > 400000 && income <= 800000) {
+        tax = 30000 + 0.25 * (income - 400000);
+      } else if (income > 800000 && income <= 2000000) {
+        tax = 130000 + 0.3 * (income - 800000);
+      } else if (income > 2000000 && income <= 8000000) {
+        tax = 490000 + 0.32 * (income - 2000000);
+      } else if (income > 8000000) {
+        tax = 2410000 + 0.35 * (income - 8000000);
+      }
+
+      const resultElement = document.getElementById('taxResult');
+      resultElement.textContent = `Income Tax: PHP ${tax.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
+

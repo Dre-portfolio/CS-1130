@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+
+<div class="home">
+<a href="https://drdrez.github.io/CS-1130/"><h1>HOME</h1></a> 
+</div>
+
+<div class="row">
+  <div class="col">
+<h1>Add two numbers</h1>
+<button onclick="clickbtn()">Compute the sum</button>
+</div>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300&family=Roboto:wght@400;500;700;900&display=swap');
+@font-face {
+    font-family: "Druk Web Bold Regular";
+    src: url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.eot");
+    src: url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/a86f94a776190a79c038dad18ec39950.svg#Druk Web Bold Regular")format("svg");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins";
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home a {
+  text-decoration: none;
+  color: #111827;
+}
+
+.home a:hover {
+  background-color: #111827;
+  color: white;
+  transition-duration: .2s;
+}
+
+.home h1 {
+  padding-inline: 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  align-items: center;
+  border: solid #111827;
+  padding: 10px;
+}
+
+
+
+
+
+</style>
+
+
+<script>
+function clickbtn()
+
+{
+
+  let a='', b='',x=0,y=0;
+
+
+
+   a=prompt('The first number:');
+
+   b=prompt('The second number:');
+
+
+
+   x=parseInt(a);
+
+   y=parseInt(b);
+
+  
+
+   let z=x+y;
+
+
+
+   document.write('<h2>The sum is:'+z+'</h2> <br>')
+
+}
+
+
+</script>
+
+
+</body>
+</html>
