@@ -125,12 +125,13 @@ class Particle {
 Setup
 --------------------*/
 function setup() {
-  createCanvas(windowWidth, windowHeight)
-  for (let i = 0; i < opt.particles; i++) {
-    Particles.push(new Particle(Math.random() * width, Math.random() * height))
+    const canvas = createCanvas(windowWidth, windowHeight);
+    canvas.parent('particle-container');
+    for (let i = 0; i < opt.particles; i++) {
+      Particles.push(new Particle(Math.random() * windowWidth, Math.random() * windowHeight));
+    }
+    strokeWeight(opt.strokeWeight);
   }
-  strokeWeight(opt.strokeWeight)
-}
 
 
 /*--------------------
