@@ -11,6 +11,8 @@
     </div>
 
 <body>
+  <canvas></canvas>
+  <script src="script.js"></script>
     <div class="itc-section-main">
   <h1>Income Tax Calculator</h1>
   <br>
@@ -23,7 +25,15 @@
 
     <style>
   body {
-    background-image: url("gif1.gif")
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0; /* Ensures the canvas is behind other content */
   }
       
         /* HOME BUTTON */
@@ -37,6 +47,7 @@
   .home a {
     text-decoration: none;
     color: #ffffff;
+    z-index: 1;
   }
   
   .home a h1 {
@@ -62,6 +73,13 @@
     align-items: center;
     color: white;
     margin-top: 20rem;
+}
+
+#income {
+  z-index: 1;
+  width: 10rem;
+  height: 2rem;
+  font-size: 1rem;
 }
 
 

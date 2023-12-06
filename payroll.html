@@ -6,7 +6,8 @@
 <link rel="stylesheet" href="style.css">
 
 <body>
-
+  <canvas></canvas>
+  <script src="script.js"></script>
   <div class="home">
     <a href="https://dre-portfolio.github.io/CS-1130/"><h1>HOME</h1></a> 
     </div>
@@ -35,7 +36,6 @@
         <th>Gross Pay</th>
         <th>Deduction Amount</th>
         <th>Net Pay</th>
-        <th>Action</th>
       </tr>
     </thead>
     <tbody id="payrollBody">
@@ -51,9 +51,17 @@
 
   <style>
 
-  body {
-    background-image: url("gif1.gif")
-}
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0; /* Ensures the canvas is behind other content */
+  }
      /* HOME BUTTON */
 .home {
     width: 100%;
@@ -65,10 +73,12 @@
   .home a {
     text-decoration: none;
     color: #ffffff;
+    z-index: 1;
   }
   
   .home a h1 {
     font-family: "Poppins";
+    z-index: 1;
   }
 
   .home a:hover {
@@ -101,6 +111,26 @@
         align-items: center;
         color: white;
         font-size: 1.2rem;
+    }
+    button {
+      z-index: 1;
+      cursor: pointer;
+    }
+    #employeeName {
+      z-index: 1;
+    }
+
+    #daysWorked {
+      z-index: 1;
+    }
+    #dailyRate {
+      z-index: 1;
+    }
+    #deductionAmount {
+      z-index: 1;
+    }
+    #deleteIndex {
+      z-index: 1;
     }
     </style>
 
@@ -153,7 +183,7 @@ function displayPayroll() {
         <td>${employee.grossPay}</td>
         <td>${employee.deductionAmount}</td>
         <td>${employee.netPay}</td>
-        <td><button onclick="deleteEmployee()">Delete</button></td>
+        
       </tr>
     `;
     payrollBody.innerHTML += row;

@@ -17,14 +17,15 @@
 }
 
 body {
+    margin: 0;
     overflow: hidden;
+    background-color: black;
   }
-
-  #particle-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+  
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0; /* Ensures the canvas is behind other content */
   }
 
 .digital-clock {
@@ -52,10 +53,10 @@ body {
 }
 
 /* NAVBAR */
+
 .navbar {    
     list-style: none;
     background: rgb(0, 0, 0);
-    z-index: -1;
 }
 ul li {
     display: inline-block;
@@ -109,11 +110,13 @@ ul li:hover ul.dropdown {
     margin: 10px;
     margin-top: 10px;
     box-shadow: 0px 0px 10px 2px rgb(255, 1, 1), 0.5;
+    z-index: 1;
 }
 
 .name {
     font-family: "Poppins";
     font-size: 2rem;
+    z-index: 900;
 }
 
 .task {
@@ -125,7 +128,7 @@ ul li:hover ul.dropdown {
 .button-assignments {
     display: flex;
     justify-content: center;
-    
+    z-index: 900;
 }
 
   /* CONVERSION SECTION */  
@@ -135,6 +138,7 @@ ul li:hover ul.dropdown {
     justify-content: center;
     align-items: center;
     margin-right: 1rem;
+    z-index: 900;
 }
 
 .conversion-section a  {
@@ -158,6 +162,7 @@ ul li:hover ul.dropdown {
     justify-content: center;
     align-items: center;
     margin-right: 1rem;
+    z-index: 900;
 }
 
 .itc-section a  {
@@ -181,6 +186,7 @@ ul li:hover ul.dropdown {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 900;
 }
 
 .payroll-section a  {
