@@ -444,8 +444,8 @@ nav .navbar .links li .sub-menu li{
 
 @media (max-width:550px){
   .header-img {
-    width: 225px;
-    height: 200px;
+    width: 250px;
+    height: 225px;
     border-radius: 100%;
     z-index: -1;
   }
