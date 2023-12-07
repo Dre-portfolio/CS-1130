@@ -319,6 +319,9 @@ nav .navbar .links li:hover .jssss-sub-menu{
 }
 
 @media (max-width:1500px){
+  body {
+    overflow: scroll;
+  }
   .audio {
     display: none;
   }
@@ -443,6 +446,9 @@ nav .navbar .links li .sub-menu li{
 }
 
 @media (max-width:550px){
+  body {
+    overflow: scroll;
+  }
   .header-img {
     width: 250px;
     height: 225px;
@@ -477,6 +483,9 @@ nav .navbar .links li .sub-menu li{
 }
 
 @media (max-width:430px){
+  body {
+    overflow: scroll;
+  }
   .header-img {
     width: 225px;
     height: 200px;
