@@ -49,4 +49,9 @@ jssssArrow.onclick = function() {
  navLinks.classList.toggle("show6");
 }
 
+let moreeArrow = document.querySelector(".moree-arrow");
+moreeArrow.onclick = function() {
+ navLinks.classList.toggle("show7");
+}
+
 

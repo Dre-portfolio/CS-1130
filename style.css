@@ -250,7 +250,8 @@ nav .navbar .links li a{
 .links li:hover .js-arrow,
 .links li:hover .jss-arrow,
 .links li:hover .jsss-arrow,
-.links li:hover .jssss-arrow{
+.links li:hover .jssss-arrow,
+.links li:hover .moree-arrow{
   transform: rotate(180deg);
   }
 
@@ -279,7 +280,8 @@ nav .navbar .links li:hover .htmlCss-sub-menu,
 nav .navbar .links li:hover .js-sub-menu,
 nav .navbar .links li:hover .jss-sub-menu,
 nav .navbar .links li:hover .jsss-sub-menu,
-nav .navbar .links li:hover .jssss-sub-menu{
+nav .navbar .links li:hover .jssss-sub-menu,
+nav .navbar .links li:hover .moree-sub-menu{
   display: block;
 }
 .navbar .links li .sub-menu li{
@@ -319,11 +321,8 @@ nav .navbar .links li:hover .jssss-sub-menu{
 }
 
 @media (max-width:1500px){
-  nav {
-    background: #000000;
-  }
-  body {
-    overflow: scroll;
+  .body {
+    overflow-x: scroll;
   }
   .audio {
     display: none;
@@ -405,7 +404,8 @@ nav .navbar .links li .sub-menu li{
 .links li:hover .js-arrow,
 .links li:hover .jss-arrow,
 .links li:hover .jsss-arrow,
-.links li:hover .jssss-arrow{
+.links li:hover .jssss-arrow,
+.links li:hover .moree-arrow{
   transform: rotate(0deg);
   }
   .navbar .links li .sub-menu .more-sub-menu{
@@ -425,14 +425,16 @@ nav .navbar .links li .sub-menu li{
   nav .navbar .links li:hover .js-sub-menu,
   nav .navbar .links li:hover .jss-sub-menu,
   nav .navbar .links li:hover .jsss-sub-menu,
-  nav .navbar .links li:hover .jssss-sub-menu{
+  nav .navbar .links li:hover .jssss-sub-menu,
+  nav .navbar .links li:hover .moree-sub-menu{
     display: none;
   }
 .navbar .nav-links.show1 .links .htmlCss-sub-menu,
   .navbar .nav-links.show3 .links .js-sub-menu,
   .navbar .nav-links.show4 .links .jss-sub-menu,
   .navbar .nav-links.show5 .links .jsss-sub-menu,
-  .navbar .nav-links.show6 .links .jssss-sub-menu
+  .navbar .nav-links.show6 .links .jssss-sub-menu,
+  .navbar .nav-links.show7 .links .moree-sub-menu
   {
       display: block;
     }
@@ -440,12 +442,11 @@ nav .navbar .links li .sub-menu li{
     .navbar .nav-links.show3 .links .js-arrow,
     .navbar .nav-links.show4 .links .jss-arrow,
     .navbar .nav-links.show5 .links .jsss-arrow,
-    .navbar .nav-links.show6 .links .jssss-arrow{
+    .navbar .nav-links.show6 .links .jssss-arrow,
+    .navbar .nav-links.show7 .links .moree-arrow{
         transform: rotate(180deg);
 }
-    .navbar .nav-links.show2 .links .more-arrow{
-      transform: rotate(90deg);
-    }
+
 }
 
 @media (max-width:550px){
@@ -476,25 +477,11 @@ nav .navbar .links li .sub-menu li{
     margin-left: 3rem;
   }
   .button-assignments {
-    display: flex;
-    flex-direction: column;
-  }
-  .itc-section {
-    margin-top: 1rem;
-  }
-  .payroll-section {
-    margin-top: 1rem;
-  }
+    display: none;
   
 }
 
 @media (max-width:430px){
-  nav {
-    background: #000000;
-  }
-  body {
-    overflow: scroll;
-  }
   .header-img {
     width: 225px;
     height: 200px;
@@ -515,28 +502,11 @@ nav .navbar .links li .sub-menu li{
   .logo {
     margin-left: 3rem;
   }
-  .button-assignments {
-    display: flex;
-    flex-direction: column;
-  }
-  .conversion-section a{
-    font-size: .6rem;
-  }
-  .itc-section {
-    margin-top: 1rem;
-  }
-  .itc-section a {
-    font-size: .6rem;
-  }
-  .payroll-section {
-    margin-top: 1rem;
-  }
-  .payroll-section a {
-    font-size: .6rem;
-  }
   .course {
     font-size: 1rem;
   }
+  .button-assignments {
+    display: none;
 }
 
 
