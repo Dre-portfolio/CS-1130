@@ -97,37 +97,31 @@ body {
 
 
 <script>
-function clickbtn()
-
-{
-
-  let a='', b='',x=0,y=0;
-
-
-
-   a=prompt('The first number:');
-
-   b=prompt('The second number:');
-
-
-
-   x=parseInt(a);
-
-   y=parseInt(b);
-
+  function clickbtn() {
+    let a = '';
+    let b = '';
+    let x = 0;
+    let y = 0;
   
-
-   let z=x+y;
-
-
-
-   document.write('<h2>The sum is:'+z+'</h2> <br>')
-
-}
-
-
-</script>
-
+    a = prompt('The first number:');
+    b = prompt('The second number:');
+  
+    x = parseInt(a);
+    y = parseInt(b);
+  
+    let z = x + y;
+  
+    document.write('<div style="text-align: center; font-family: Poppins; ">');
+    document.write('<h2>The sum is: ' + z + '</h2><br>');
+    document.write('<button onclick="goHome()">Home</button>');
+    document.write('</div>');
+  }
+  
+  function goHome() {
+    window.location.href = 'https://dre-portfolio.github.io/CS-1130/'; // Replace 'your_home_page_url' with the URL of your home page
+  }
+  </script>
+  
 
 </body>
 </html>
