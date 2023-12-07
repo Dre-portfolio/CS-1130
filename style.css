@@ -321,9 +321,6 @@ nav .navbar .links li:hover .moree-sub-menu{
 }
 
 @media (max-width:1500px){
-  .body {
-    overflow-x: scroll;
-  }
   .audio {
     display: none;
   }
@@ -450,12 +447,7 @@ nav .navbar .links li .sub-menu li{
 }
 
 @media (max-width:550px){
-  nav {
-    background: #000000;
-  }
-  body {
-    overflow: scroll;
-  }
+ 
   .header-img {
     width: 250px;
     height: 225px;
