@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  
  <style>
     
      /* Exo thin font from Google. */
@@ -9,30 +12,7 @@
 /* Background data (Original source: https://subtlepatterns.com/grid-me/) */
 body {
   font: 400 16px/1.5 'Ubuntu', 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
-  text-align: center;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
-  -webkit-animation: bg-scrolling-reverse .92s infinite; /* Safari 4+ */
-  -moz-animation: bg-scrolling-reverse .92s infinite; /* Fx 5+ */
-  -o-animation: bg-scrolling-reverse .92s infinite; /* Opera 12+ */
-  animation: bg-scrolling-reverse .92s infinite; /* IE 10+ */
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  -o-animation-timing-function: linear;
-  animation-timing-function: linear;
-}
-
-/* Animations */
-@-webkit-keyframes bg-scrolling-reverse {
-  100% { background-position: 50px 50px; }
-}
-@-moz-keyframes bg-scrolling-reverse {
-  100% { background-position: 50px 50px; }
-}
-@-o-keyframes bg-scrolling-reverse {
-  100% { background-position: 50px 50px; }
-}
-@keyframes bg-scrolling-reverse {
-  100% { background-position: 50px 50px; }
+  overflow: hidden;
 }
 
     * {
@@ -41,9 +21,18 @@ body {
    
     }
 
+    #animated-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  
+}
+
     .home {
         text-decoration: none;
-        color: black;
+        color: rgb(255, 255, 255);
+        z-index: 1;
     }
 
     .home:hover {
@@ -59,18 +48,26 @@ body {
      grid-template-columns: 100px,100px,100px,100px,
                             100px,100px,100px,100px;
      width:98%;
+     z-index: 1;
+     color: white;
    }
    h3 {
      text-align:center;
+     z-index: 1;
+     color: white;
    }
    h2 {
      text-align:center;
+     z-index: 1;
+     color: white;
    }
    #headerdiv{
       grid-row-start:1;
       grid-row-end:1;
       grid-column-start:1;
       grid-column-end:8;
+      z-index: 1;
+      color: white;
    }
 
    #inputdiv{
@@ -87,7 +84,8 @@ body {
       border-bottom:solid 1px;
       border-right:solid 1px;  
       height:250px;    
-
+      z-index: 1;
+      color: white;
    }
 
   #buttonsdiv{
@@ -101,8 +99,8 @@ body {
       outline-style:solid;
       outline-width: 1px;
       text-align: center;
-
-
+      z-index: 1;
+      color: white;
    }
 
  #cartdiv{
@@ -119,20 +117,18 @@ body {
       border-left:solid 1px;      
       border-bottom:solid 1px;
       border-right:solid 1px;      
-
+      z-index: 1;
+      color: rgb(255, 255, 255);
    }
 
  
    #btnaddtocart {
       margin-top:80px;
    }
-   #pagefooter {
-      text-align:center;
-      color:#ff99cc
-   }
+  
    #pageheader {
       text-align:center;
-      color:#000000
+      color: white;
    }
 
    #totalamount {
@@ -143,11 +139,13 @@ body {
       display:inline-block;
       width: 80px;
       text-align :left;
+     
    }
 
    #itemstable {
      margin-left:auto;
      margin-right:auto;
+     color: #ffffff;
    }
    #footerdiv{
       grid-row-start:20;
@@ -169,8 +167,8 @@ body {
      text-align:right;
    }
 
-   #tablebody tr:nth-child(even){background-color: #f2f2f2;}
-   #tablebody tr:nth-child(odd){background-color: #bfddf1;}
+   #tablebody tr:nth-child(even){background-color: rgb(37, 92, 42)0, 0;}
+   #tablebody tr:nth-child(odd){background-color: rgb(37, 92, 42)0, 0;}
 
    input {
     width:100px;
@@ -181,9 +179,13 @@ body {
     width:120px;
     text-align: left;
    }
+
+  
  </style>  
 </head>
 <body>
+   <div id="animated-bg"></div>
+  <script src="script-bg.js"></script>
 <div id="maindiv">
    <div id ="footerdiv"> 
    </div>
