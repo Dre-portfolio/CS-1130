@@ -216,6 +216,11 @@ nav .navbar{
   /* background: red; */
   padding: 0 50px;
 }
+
+.navbar img {
+  margin-right: 1rem;
+}
+
 .navbar .logo a{
   font-size: 30px;
   color: #fff;
@@ -321,6 +326,9 @@ nav .navbar .links li:hover .moree-sub-menu{
 }
 
 @media (max-width:1500px){
+  .navbar img {
+    display: none;
+  }
   .audio {
     display: none;
   }
